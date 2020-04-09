@@ -17,6 +17,7 @@ void read_command (char cmd[], char *par[])
     }
     
     if (count = 1) return;
+    pch = strtok (line, "\n");
     
     while (pch != NULL){
         array[i++] = strdup(pch);
