@@ -10,13 +10,13 @@ void read_command (char cmd[], char *par[])
     int count = 0, i = 0, j = 0;
     char *array[100], *pch;
     
-    for (;;){
+    while(1){
         int c = fgetc (stdin);
         line[count++] = (char) c;
         if (c == '\n') break;
     }
     
-    if (count = 1) return;
+    if (count == 1) return;
     pch = strtok (line, "\n");
     
     while (pch != NULL){
@@ -52,10 +52,10 @@ int main()
     while (1){
         type_prompt(); //display prompt on screen
         read_command ( command, parameters ); //read terminal inputs
-        if (fork () != 0)
+        if (fork() != 0)
             wait (NULL);
         else{
-            strcpy (cmd, "bin/");
+            strcpy (cmd, "/bin/");
             strcat (cmd, command);
             execve (cmd, parameters, envp);
         }
