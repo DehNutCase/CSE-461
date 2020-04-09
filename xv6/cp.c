@@ -11,7 +11,7 @@ main(int argc, char *argv[])
   int fd0, fd1, n;
 
   if(argc != 3){
-    printf(1, "Need 2 arguments!");
+    printf(1, "Need 2 arguments!\n");
     exit();
   }
 
@@ -20,7 +20,7 @@ main(int argc, char *argv[])
     exit();
   }
   
-  if((fd1 = open(argv[2], O_RDONLY|O_RDWR)) < 0){
+  if((fd1 = open(argv[2], O_CREATE|O_RDWR)) < 0){
     printf(1, "cp: cannot open %s\n", argv[1]);
     exit();
   }
