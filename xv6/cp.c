@@ -15,12 +15,12 @@ main(int argc, char *argv[])
     exit();
   }
 
-  if((fd = open(argv[1], O_RDONLY)) < 0){
+  if((fd0 = open(argv[1], O_RDONLY)) < 0){
     printf(1, "cp: cannot open %s\n", argv[1]);
     exit();
   }
   
-  if((fd = open(argv[2], O_RDONLY|O_RDWR)) < 0){
+  if((fd1 = open(argv[2], O_RDONLY|O_RDWR)) < 0){
     printf(1, "cp: cannot open %s\n", argv[1]);
     exit();
   }
