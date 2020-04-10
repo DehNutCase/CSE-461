@@ -8,7 +8,7 @@ char buf[512];
 int
 main(int argc, char *argv[])
 {
-  int fd0, fd1, n;
+  int fd0, n;
 
   if(argc < 3){
     printf(1, "Need at least 2 arguments!\n");
@@ -21,13 +21,15 @@ main(int argc, char *argv[])
   }
   
   for (int i = 0; i < argc; i++){
-    if((fd1 = open(argv[i], O_CREATE|O_RDWR)) < 0){
+    if((int fd1 = open(argv[i], O_CREATE|O_RDWR)) < 0){
       printf(1, "cp: cannot open %s\n", argv[i]);
       exit();
     }
+    
     while ( (n = read (fd0, buf, sizeof(buf))) > 0 ){
       write(fd1, buf, n);
     }
+    
     close(fd1);
   }
   
