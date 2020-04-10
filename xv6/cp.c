@@ -10,8 +10,8 @@ main(int argc, char *argv[])
 {
   int fd0, fd1, n;
 
-  if(argc != 3){
-    printf(1, "Need 2 arguments!\n");
+  if(argc < 3){
+    printf(1, "Need at least 2 arguments!\n");
     exit();
   }
 
@@ -20,9 +20,15 @@ main(int argc, char *argv[])
     exit();
   }
   
-  if((fd1 = open(argv[2], O_CREATE|O_RDWR)) < 0){
-    printf(1, "cp: cannot open %s\n", argv[1]);
-    exit();
+  for (i = 0; i < argc; i++){
+    if((fd1 = open(argv[i], O_CREATE|O_RDWR)) < 0){
+      printf(1, "cp: cannot open %s\n", argv[i]);
+      exit();
+    }
+    while ( (n = read (fd0, buf, sizeof(buf))) > 0 ){
+    write(fd1, buf, n);
+    }
+    close(fd1);
   }
   
   while ( (n = read (fd0, buf, sizeof(buf))) > 0 ){
@@ -30,6 +36,5 @@ main(int argc, char *argv[])
   }
   
   close(fd0);
-  close(fd1);
   exit();
 }
