@@ -16,7 +16,7 @@ void read_command (char cmd[], char *par[])
         if (c == '\n') break;
     }
     
-    if (count == 1) return;
+    if (count == 1)return;
     pch = strtok (line, "\n");
     
     while (pch != NULL){
@@ -29,6 +29,8 @@ void read_command (char cmd[], char *par[])
     for (int j = 0; j < i; j++)
         par[j] = array[j];
     par[i] = NULL;
+    
+    return;
 }
 
 void type_prompt()
@@ -36,7 +38,8 @@ void type_prompt()
     static int first_time = 1;
     if (first_time){
         const char* CLEAR_SCREEN_ANSI = "\e[1;1H\e[2J";
-        write(STDOUT_FILENO,CLEAR_SCREEN_ANSI, 12);
+        //write(STDOUT_FILENO,CLEAR_SCREEN_ANSI, 12);
+        printf(CLEAR_SCREEN_ANSI);
         first_time = 0;
     }
     
