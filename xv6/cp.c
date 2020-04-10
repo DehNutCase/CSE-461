@@ -26,13 +26,9 @@ main(int argc, char *argv[])
       exit();
     }
     while ( (n = read (fd0, buf, sizeof(buf))) > 0 ){
-    write(fd1, buf, n);
+      write(fd1, buf, n);
     }
     close(fd1);
-  }
-  
-  while ( (n = read (fd0, buf, sizeof(buf))) > 0 ){
-      write(fd1, buf, n);
   }
   
   close(fd0);
