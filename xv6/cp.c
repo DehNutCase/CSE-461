@@ -15,12 +15,15 @@ main(int argc, char *argv[])
     exit();
   }
 
-  if((fd0 = open(argv[1], O_RDONLY)) < 0){
-    printf(1, "cp: cannot open %s\n", argv[1]);
-    exit();
-  }
+
   
   for (int i = 2; i < argc; i++){
+      
+    if((fd0 = open(argv[1], O_RDONLY)) < 0){
+      printf(1, "cp: cannot open %s\n", argv[1]);
+      exit();
+    }
+    
     if((fd1 = open(argv[i], O_CREATE|O_RDWR)) < 0){
       printf(1, "cp: cannot open %s\n", argv[i]);
       exit();
@@ -31,8 +34,8 @@ main(int argc, char *argv[])
     }
     
     close(fd1);
+    close(fd0);
   }
   
-  close(fd0);
   exit();
 }
