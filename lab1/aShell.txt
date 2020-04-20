@@ -1,0 +1,54 @@
+Script started on 2020-04-09 17:04:01-07:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+]0;006198682@csusb.edu@jb358-7:~/cse461[006198682@csusb.edu@jb358-7 cse461]$ ./aShell
+[1;1H[2J#ls
+ls: cannot access ''$'\273\377\177': No such file or directory
+#
+ls: cannot access ''$'\273\377\177': No such file or directory
+#help
+#
+#ls
+ls: cannot access ''$'\273\377\177': No such file or directory
+#exit
+#exit
+#exit
+]0;006198682@csusb.edu@jb358-7:~/cse461[006198682@csusb.edu@jb358-7 cse461]$ ./aShell
+[1;1H[2J#ls
+SimpleShell.c  cp_command.txt	       lab1_cp_command.txt  xv6_1.txt
+aShell	       debugging_script_1.txt  simple_shell.txt     xv6_2.txt
+aShell.txt     debugging_script_2.txt  xv6
+#ls
+SimpleShell.c  cp_command.txt	       lab1_cp_command.txt  xv6_1.txt
+aShell	       debugging_script_1.txt  simple_shell.txt     xv6_2.txt
+aShell.txt     debugging_script_2.txt  xv6
+#ls
+SimpleShell.c  cp_command.txt	       lab1_cp_command.txt  xv6_1.txt
+aShell	       debugging_script_1.txt  simple_shell.txt     xv6_2.txt
+aShell.txt     debugging_script_2.txt  xv6
+#
+SimpleShell.c  cp_command.txt	       lab1_cp_command.txt  xv6_1.txt
+aShell	       debugging_script_1.txt  simple_shell.txt     xv6_2.txt
+aShell.txt     debugging_script_2.txt  xv6
+#
+SimpleShell.c  cp_command.txt	       lab1_cp_command.txt  xv6_1.txt
+aShell	       debugging_script_1.txt  simple_shell.txt     xv6_2.txt
+aShell.txt     debugging_script_2.txt  xv6
+#exit
+]0;006198682@csusb.edu@jb358-7:~/cse461[006198682@csusb.edu@jb358-7 cse461]$ ./aShell
+[1;1H[2J#
+#ls
+SimpleShell.c  cp_command.txt	       lab1_cp_command.txt  xv6_1.txt
+aShell	       debugging_script_1.txt  simple_shell.txt     xv6_2.txt
+aShell.txt     debugging_script_2.txt  xv6
+#help
+#ls
+ls: cannot access 'p': No such file or directory
+#
+ls: cannot access 'p': No such file or directory
+#exit
+#ls
+ls: cannot access 'p': No such file or directory
+#exit
+#exit
+]0;006198682@csusb.edu@jb358-7:~/cse461[006198682@csusb.edu@jb358-7 cse461]$ e[Kexit
+
+Script done on 2020-04-09 17:04:58-07:00 [COMMAND_EXIT_CODE="0"]
