@@ -1,0 +1,7 @@
+<resources>
+    <!--most of code taken from https://www.tutorialspoint.com/android/android_hello_world_example.htm-->
+    <string name="app_name">Lab3HelloWorld</string>
+    <string name="hello_world">"Hello, CSE 461–660"</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
