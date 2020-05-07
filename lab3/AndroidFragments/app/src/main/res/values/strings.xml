@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Fragments</string>
+    <string name="title_a">Fragment A</string>
+    <string name="title_b">Fragment B</string>
+    <string name="i_am_fragment_b">I am Fragment B</string>
+    <string name="i_am_fragment_a">I am Fragment A</string>
+    <string name="fragment_a">Fragment A</string>
+    <string name="fragment_b">Fragment B</string>
+</resources>
