@@ -78,11 +78,10 @@
     <TextView
         android:id="@+id/displayResult"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center_horizontal"
-        android:textSize="32dp"
-        android:text="tests">
+        android:textSize="32dp">
     </TextView>
 </LinearLayout>
