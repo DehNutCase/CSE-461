@@ -1,7 +1,7 @@
-package com.example.lab3simplecalculator;
+package com.example.lab4remoterandomnumber;
 
 import androidx.appcompat.app.AppCompatActivity;
-//import android.support.v7.app.AppCompatActivity;
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -39,22 +39,21 @@ import java.io.InputStreamReader;
 public class MainActivity extends Activity implements View.OnClickListener{
     EditText t1;
     EditText t2;
+    EditText t3;
 
-    ImageButton plus;
-    ImageButton minus;
-    ImageButton multiply;
-    ImageButton divide;
+    Button send;
 
     TextView displayResult;
 
     String oper = "";
 
     private Socket client_socket;
-    private static final int SERVERPORT = 5665; //makesure this matches the port in CalculatorServer.java
+    private static final int SERVERPORT = 6556; //makesure this matches the port in RNGServer.java
     private static final String SERVER_IP = "192.168.0.100"; //ipconfig gets this
 
     String num1 = "0";
     String num2 = "0";
+    String num3 = "1";
 
     /** Called when the activity is first created. */
     @Override
@@ -65,20 +64,14 @@ public class MainActivity extends Activity implements View.OnClickListener{
         // find the EditText elements (defined in res/layout/activity_main.xml
         t1 = (EditText) findViewById(R.id.t1);
         t2 = (EditText) findViewById(R.id.t2);
+        t3 = (EditText) findViewById(R.id.t3);
 
-        plus = (ImageButton) findViewById(R.id.plus);
-        minus = (ImageButton) findViewById(R.id.minus);
-        multiply = (ImageButton) findViewById(R.id.multiply);
-        divide = (ImageButton) findViewById(R.id.divide);
+        send = (Button) findViewById(R.id.send_button);
 
         displayResult = (TextView) findViewById(R.id.displayResult);
 
         // set  listeners
-        plus.setOnClickListener(this);
-        minus.setOnClickListener(this);
-        multiply.setOnClickListener(this);
-        divide.setOnClickListener(this);
-
+        send.setOnClickListener(this);
 
         new Thread(new ClientThread()).start();
     }
@@ -107,54 +100,27 @@ public class MainActivity extends Activity implements View.OnClickListener{
     // @Override
     public void onClick( View view ) {
 
-
-
         // check if the fields are empty
         if (TextUtils.isEmpty(t1.getText().toString())
-                || TextUtils.isEmpty(t2.getText().toString())) {
+                || TextUtils.isEmpty(t2.getText().toString())
+                || TextUtils.isEmpty(t3.getText().toString())) {
             return;
         }
 
         // read EditText and fill variables with numbers
-        num1 = t1.getText().toString();
-        num2 = t2.getText().toString();
+        num1 = Integer.toString(Integer.parseInt(t1.getText().toString())); //forcibly checks that num 1 is an int rather than a float
+        num2 = Integer.toString(Integer.parseInt(t2.getText().toString()));
+        num3 = Integer.toString(Integer.parseInt(t3.getText().toString()));
 
-        String str = "";
-
-        // perform operations
-        // save operator in oper for later use
-        switch ( view.getId() ) {
-            case R.id.plus:
-                oper = "+";
-                str = num1 + oper + num2;
-                break;
-            case R.id.minus:
-                oper = "-";
-                str = num1 + oper + num2;
-                break;
-            case R.id.multiply:
-                oper = "*";
-                str = num1 + oper + num2;
-                break;
-            case R.id.divide:
-                oper = "/";
-                str = num1 + oper + num2;
-                break;
-            default:
-                break;
-        }
-
-        String[] str_list = {str};
+        String str = num1 + "." + num2 + "." + num3;
 
         SendfeedbackJob job = new SendfeedbackJob();
         job.execute(str);
         str = "";
-
-
     }
 
     private class SendfeedbackJob extends AsyncTask<String, Void, String> {
-        double result = 0;
+        String result = "";
         @Override
         protected String doInBackground(String[] params) {
             try {
@@ -162,9 +128,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 String inputLine = null;
                 int index = 0;
                 while ( ( inputLine = input.readLine() )  != null ) {
-                    result = Float.parseFloat(inputLine);
+                    result = inputLine;
                     index = index + 1;
-                    return "Done!";
+                    return "Done!"; //doesn't work without this line, I don't think I'm using Asynch Task properly
                 }
             } catch (UnknownHostException e) {
                 e.printStackTrace();
@@ -180,7 +146,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         protected void onPostExecute(String message) {
             //process message
             // form the output line
-            displayResult.setText(num1 + " " + oper + " " + num2 + " = " + result);
+            displayResult.setText(result);
         }
     }
 }

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab4RemoteRandomNumber</string>
+    <string name="Instruction_Text">Generates random Integers between Smallest Int and Largest Int. Amount determines how many you generate.</string>
+    <string name="send_numbers">Send Numbers</string>
+    <string name="amount">Amount</string>
+    <string name="largest_int">Largest Int</string>
+    <string name="smallest_int">Smallest Int</string>
+</resources>
