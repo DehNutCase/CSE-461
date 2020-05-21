@@ -33,7 +33,7 @@ public class CalculatorServer {
         System.out.println ( inputLine );
         
         //parse string and calculate result
-        String string_array[] = inputLine.split("\\D");
+        String string_array[] = inputLine.split("[+\\-*/]");
         System.out.println (string_array[0]);
         System.out.println (string_array[1]);
         double num1 = Float.parseFloat(string_array[0]);
