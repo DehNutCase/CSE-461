@@ -5,4 +5,4 @@ program RAND_PROG {
     void INITIALIZE_RANDOM ( long ) = 1;        /* service #1 */
     double GET_NEXT_RANDOM ( void ) = 2;        /* service #2 */
   } = 1;
-} = 006198682;         /* program # */
+} = 6198682;         /* program # */
