@@ -14,7 +14,7 @@ extern "C" {
 #endif
 
 
-#define RAND_PROG 006198682
+#define RAND_PROG 6198682
 #define RAND_VERS 1
 
 #if defined(__STDC__) || defined(__cplusplus)
