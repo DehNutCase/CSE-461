@@ -7,7 +7,7 @@
 #include "rand.h"
 
 
-void
+double
 rand_prog_1(char *host)
 {
 	CLIENT *clnt;
