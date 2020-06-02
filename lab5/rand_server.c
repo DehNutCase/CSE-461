@@ -21,11 +21,11 @@ initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 double *
 get_next_random_1_svc(void *argp, struct svc_req *rqstp)
 {
-	static double  result;
+  static double  result;
 
-	/*
-	 * insert server code here
-	 */
+  result += 0.31;
+  if ( result >= 1.0 )
+    result -= 0.713;
 
-	return &result;
+  return &result;
 }

@@ -35,6 +35,8 @@ rand_prog_1(char *host)
 #ifndef	DEBUG
 	clnt_destroy (clnt);
 #endif	 /* DEBUG */
+
+  return *result_2;
 }
 
 
@@ -49,5 +51,13 @@ main (int argc, char *argv[])
 	}
 	host = argv[1];
 	rand_prog_1 (host);
+
+  double x;
+      int i;
+      printf("\n twenty random numbers ");
+      for ( i = 0; i < 20; ++i ){
+              x = rand_prog_1 (host);
+              printf(" %f, ", x );
+      }
 exit (0);
 }
