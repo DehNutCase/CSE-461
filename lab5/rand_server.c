@@ -9,22 +9,14 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+int seed = 0;
 
 void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
   static char * result;
-  struct timeval tv;
-  
-  for (int i = 0; i < 500000; i++){
-    i++;
-    i--;    //doing nothing to stall for time
-    int k = i * i;
-  }
-  printf("Hello");
-  gettimeofday(&tv, NULL);
-  time_t current_time = tv.tv_sec;
-  srand((unsigned) current_time);
+  seed += time(0) + 1;
+  srand((unsigned) seed);
 
   return (void *) &result;
 }
