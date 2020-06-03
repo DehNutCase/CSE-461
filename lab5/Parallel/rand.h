@@ -22,8 +22,8 @@ extern "C" {
 extern  void * initialize_random_1(long *, CLIENT *);
 extern  void * initialize_random_1_svc(long *, struct svc_req *);
 #define GET_NEXT_RANDOM 2
-extern  double * get_next_random_1(void *, CLIENT *);
-extern  double * get_next_random_1_svc(void *, struct svc_req *);
+extern  double * get_next_random_1(void *, CLIENT *, double, double);
+extern  double * get_next_random_1_svc(void *, struct svc_req *, double, double);
 extern int rand_prog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
