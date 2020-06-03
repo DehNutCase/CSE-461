@@ -16,7 +16,7 @@ initialize_random_1_svc(long *argp, struct svc_req *rqstp)
   static char * result;
   struct timeval tv;
   
-  for (int i = 0; i < 5000; i++){
+  for (int i = 0; i < 500000; i++){
     i++;
     i--; //doing nothing to stall for time
   }
