@@ -15,7 +15,7 @@ void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
   static char * result;
-  seed += time(0) + 1;
+  seed += time(0) + 1; //we need to change the seed every time this is called
   srand((unsigned) seed);
 
   return (void *) &result;
