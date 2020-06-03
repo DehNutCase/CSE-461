@@ -7,13 +7,22 @@
 #include "rand.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-srand((unsigned) time(0));
+#include <sys/time.h>
+
 
 void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
   static char * result;
+  struct timeval tv;
+  
+  for (int i = 0; i < 5000; i++){
+    i++;
+    i--; //doing nothing to stall for time
+  }
+  gettimeofday(&tv, NULL);
+  time_t current_time = tv.tv_sec;
+  srand((unsigned) current_time);
 
   return (void *) &result;
 }
