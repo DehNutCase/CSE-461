@@ -27,9 +27,10 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp)
   static double  result;
   time_t t;
   srand((unsigned) time(&t));
-  
+  delay(5);
 
- result = (double)rand()/RAND_MAX*1.0;
+
+  result = (double)rand()/RAND_MAX*1.0;
 
   return &result;
 }
