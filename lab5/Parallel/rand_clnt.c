@@ -25,7 +25,7 @@ initialize_random_1(long *argp, CLIENT *clnt)
 }
 
 double *
-get_next_random_1(void *argp, CLIENT *clnt)
+get_next_random_1(void *argp, CLIENT *clnt, double *x1, double *x2)
 {
 	static double clnt_res;
 
