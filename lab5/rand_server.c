@@ -7,6 +7,7 @@
 #include "rand.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
