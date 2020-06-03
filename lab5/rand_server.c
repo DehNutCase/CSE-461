@@ -18,7 +18,8 @@ initialize_random_1_svc(long *argp, struct svc_req *rqstp)
   
   for (int i = 0; i < 500000; i++){
     i++;
-    i--; //doing nothing to stall for time
+    i--;    //doing nothing to stall for time
+    int k = i * i;
   }
   gettimeofday(&tv, NULL);
   time_t current_time = tv.tv_sec;
