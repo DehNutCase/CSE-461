@@ -29,7 +29,7 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp)
   srand((unsigned) time(&t));
   
   int i = 0;
-  #creating delay to allow RNG to not generate same number
+  //creating delay to allow RNG to not generate same number
   while (i < 500){
     i++;
   }
