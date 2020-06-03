@@ -8,16 +8,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+srand((unsigned) time(0));
 
 void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
   static char * result;
-  
-  for (int i = 0; i < 100000; i++){
-    continue; //delay to affect RNG
-  }
-  srand((unsigned) time(0));
 
   return (void *) &result;
 }
