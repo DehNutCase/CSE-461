@@ -13,8 +13,11 @@ void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
   static char * result;
-
-  srand((unsigned) time(NULL));
+  
+  for (int i = 0; i < 100000; i++){
+    continue; //delay to affect RNG
+  }
+  srand((unsigned) time(0));
 
   return (void *) &result;
 }
@@ -25,7 +28,6 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp)
   static double  result;
 
   result = (double)rand()/RAND_MAX*1.0;
-  srand((unsigned) time(NULL));
 
   return &result;
 }
