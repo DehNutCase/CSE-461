@@ -1,0 +1,12 @@
+Script started on 2020-06-02 23:22:51-07:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;006198682@csusb.edu@jb358-4:~/cse461/lab5/Parallel[006198682@csusb.edu@jb358-4 Parallel]$ ./rand_client
+usage: ./rand_client server1 server2 server3
+]0;006198682@csusb.edu@jb358-4:~/cse461/lab5/Parallel[006198682@csusb.edu@jb358-4 Parallel]$ ./rand_client jb358-7 jb358-6 jb358-5
+
+ twenty random numbers  -0.116571,  -0.300965,  0.005138,  0.101496,  -0.089067,  0.010670,  0.314449,  0.125798,  0.224452,  0.026517,  -0.163632,  -0.069490,  -0.256022,  -0.157256,  -0.353664,  -0.043442,  0.050906,  0.357666,  0.166380,  0.267344, ]0;006198682@csusb.edu@jb358-4:~/cse461/lab5/Parallel[006198682@csusb.edu@jb358-4 Parallel]$ ./rand_client jb358-7 jb358-6 jb358-5
+
+ twenty random numbers  -0.372897,  0.158710,  0.197489,  0.017726,  -0.451568,  -0.417499,  0.403003,  0.441657,  -0.028082,  0.294376,  -0.171105,  0.149163,  -0.318143,  0.212239,  0.037514,  -0.425717,  0.113049,  0.432509,  0.467560,  0.289641, ]0;006198682@csusb.edu@jb358-4:~/cse461/lab5/Parallel[006198682@csusb.edu@jb358-4 Parallel]$ ./rand_client jb358-7 jb358-6 jb358-5
+
+ twenty random numbers  0.008121,  -0.091844,  -0.484221,  -0.374816,  -0.484219,  -0.375705,  0.027803,  0.136141,  0.243230,  0.144789,  -0.245226,  -0.141264,  0.256348,  -0.132198,  -0.022728,  -0.124039,  -0.015334,  0.384971,  0.492820,  0.100275, ]0;006198682@csusb.edu@jb358-4:~/cse461/lab5/Parallel[006198682@csusb.edu@jb358-4 Parallel]$  [Kexit
+
+Script done on 2020-06-02 23:24:26-07:00 [COMMAND_EXIT_CODE="0"]
