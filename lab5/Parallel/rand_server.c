@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 int seed = 0;
 
@@ -27,13 +28,13 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp, double x1, double x2)
   //to compute a random number with 3 servers, take as input two doubles
   //from up to two other machines
   //and return a random number generated here, plus the other two, modulo 1
-  //That is, result = (random + x1 + x1) % 1
+  //That is, result = (random + x1 + x2) % 1
   //note that the distribution of number for this probably isn't uniform
   //that is, certain numbers should be more likely than others
   static double  result;
 
   result = (double)rand()/RAND_MAX*1.0;
-  result = (result + x1 + x2)%1.0;
+  result = remainder((result + x1 + x2), 1.0); //can't use modulus directly
 
   return &result;
 }
