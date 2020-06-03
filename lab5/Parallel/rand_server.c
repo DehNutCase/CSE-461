@@ -33,7 +33,7 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp, double x1, double x2)
   static double  result;
 
   result = (double)rand()/RAND_MAX*1.0;
-  result = (result + x1 + x2)%1;
+  result = (result + x1 + x2)%1.0;
 
   return &result;
 }

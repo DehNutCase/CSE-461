@@ -41,28 +41,38 @@ rand_prog_1(char *host1, char *host2, char *host3)
 	}
 #endif	/* DEBUG */
 
-	result_1 = initialize_random_1(&initialize_random_1_arg, clnt);
+	result_1 = initialize_random_1(&initialize_random_1_arg, clnt1);
 	if (result_1 == (void *) NULL) {
-		clnt_perror (clnt, "call failed");
+		clnt_perror (clnt1, "call failed");
+	}
+  
+	result_1 = initialize_random_1(&initialize_random_1_arg, clnt2);
+	if (result_1 == (void *) NULL) {
+		clnt_perror (clnt2, "call failed");
+	}
+  
+  result_1 = initialize_random_1(&initialize_random_1_arg, clnt3);
+	if (result_1 == (void *) NULL) {
+		clnt_perror (clnt3, "call failed");
 	}
   
   //not quite fully parallel because the client doesn't store earlier results
   //so instead what's happening is that server1 generates a random number by itself
 	temp_1 = get_next_random_1((void*)&get_next_random_1_arg, clnt1, temp1, temp2);
 	if (temp_1 == (double *) NULL) {
-		clnt_perror (clnt, "call failed");
+		clnt_perror (clnt2, "call failed");
 	}
   
   //server 2 generates a number from the results of server 1 and itself
   temp_2 = get_next_random_1((void*)&get_next_random_1_arg, clnt2, temp1, temp2);
 	if (temp_2 == (double *) NULL) {
-		clnt_perror (clnt, "call failed");
+		clnt_perror (clnt3, "call failed");
 	}
   
   //and server three generates a number from server 1, 2, and itself
   result_2 = get_next_random_1((void*)&get_next_random_1_arg, clnt3, temp1, temp2);
 	if (result_2 == (double *) NULL) {
-		clnt_perror (clnt, "call failed");
+		clnt_perror (clnt3, "call failed");
 	}
   
   
