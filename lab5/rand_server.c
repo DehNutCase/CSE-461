@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <dos.h>
 
 void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
@@ -28,7 +27,12 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp)
   static double  result;
   time_t t;
   srand((unsigned) time(&t));
-  delay(5);
+  
+  int i = 0;
+  #creating delay to allow RNG to not generate same number
+  while (i < 500){
+    i++;
+  }
 
 
   result = (double)rand()/RAND_MAX*1.0;
