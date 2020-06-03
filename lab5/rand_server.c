@@ -12,28 +12,18 @@
 void *
 initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
-	static char * result;
+  static char * result;
 
-	/*
-	 * insert server code here
-	 */
+  time_t t;
+  srand((unsigned) time(&t));
 
-	return (void *) &result;
+  return (void *) &result;
 }
 
 double *
 get_next_random_1_svc(void *argp, struct svc_req *rqstp)
 {
   static double  result;
-  time_t t;
-  srand((unsigned) time(&t));
-  
-  int i = 0;
-  //creating delay to allow RNG to not generate same number
-  while (i < 500){
-    i++;
-  }
-
 
   result = (double)rand()/RAND_MAX*1.0;
 
