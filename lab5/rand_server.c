@@ -14,8 +14,7 @@ initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 {
   static char * result;
 
-  time_t t;
-  srand((unsigned) time(&t));
+  srand((unsigned) time(NULL));
 
   return (void *) &result;
 }
@@ -26,7 +25,7 @@ get_next_random_1_svc(void *argp, struct svc_req *rqstp)
   static double  result;
 
   result = (double)rand()/RAND_MAX*1.0;
-  srand((unsigned) time(null));
+  srand((unsigned) time(NULL));
 
   return &result;
 }
