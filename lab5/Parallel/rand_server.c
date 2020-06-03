@@ -23,7 +23,7 @@ initialize_random_1_svc(long *argp, struct svc_req *rqstp)
 }
 
 double *
-get_next_random_1_svc(void *argp, struct svc_req *rqstp, double x1, double x2)
+get_next_random_1_svc(void *argp, struct svc_req *rqstp, double *x1, double *x2)
 {
   //to compute a random number with 3 servers, take as input two doubles
   //from up to two other machines

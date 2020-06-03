@@ -18,8 +18,10 @@ rand_prog_1(char *host1, char *host2, char *host3)
 	long  initialize_random_1_arg;
 	double  *result_2;
 	char *get_next_random_1_arg;
-  double *temp_1 = 0.0;
-  double *temp_2 = 0.0;
+  double *temp_1; 
+  *temp_1 = 0.0;
+  double *temp_2; 
+  *temp_2 = 0.0;
 
 #ifndef	DEBUG
 	clnt1 = clnt_create (host1, RAND_PROG, RAND_VERS, "udp");
