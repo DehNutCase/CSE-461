@@ -57,10 +57,6 @@ main (int argc, char *argv[])
       printf("\n twenty random numbers ");
       for ( i = 0; i < 20; ++i ){
               x = rand_prog_1 (host);
-              //creating time delay to get different numbers
-              for (int j = 0; j < 5000; j++){
-                continue;
-              }
               printf(" %f, ", x );
       }
 exit (0);
